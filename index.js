@@ -40,7 +40,7 @@ module.exports = function parseDate (isoDate) {
     var utc = Date.UTC(year, month, day, hour, minute, second, ms)
     date = new Date(utc - offset)
   } else {
-    date = new Date(year, month, day, hour, minute, second, ms)
+    date = new Date(Date.UTC(year, month, day, hour, minute, second, ms))
   }
 
   if (isFirstCentury) {
